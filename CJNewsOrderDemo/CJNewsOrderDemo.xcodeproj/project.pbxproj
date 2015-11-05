@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8051D1EA1BEA08E700D3B19F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8051D1E91BEA08E700D3B19F /* main.m */; };
+		8051D1ED1BEA08E700D3B19F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8051D1EC1BEA08E700D3B19F /* AppDelegate.m */; };
+		8051D1F01BEA08E700D3B19F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8051D1EF1BEA08E700D3B19F /* ViewController.m */; };
+		8051D1F31BEA08E700D3B19F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8051D1F11BEA08E700D3B19F /* Main.storyboard */; };
+		8051D1F51BEA08E700D3B19F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8051D1F41BEA08E700D3B19F /* Images.xcassets */; };
+		8051D1F81BEA08E700D3B19F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8051D1F61BEA08E700D3B19F /* LaunchScreen.xib */; };
+		8051D2041BEA08E800D3B19F /* CJNewsOrderDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8051D2031BEA08E800D3B19F /* CJNewsOrderDemoTests.m */; };
+		8051D21E1BEB30AD00D3B19F /* order_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 8051D2101BEB30AD00D3B19F /* order_back.png */; };
+		8051D21F1BEB30AD00D3B19F /* order_back_select.png in Resources */ = {isa = PBXBuildFile; fileRef = 8051D2111BEB30AD00D3B19F /* order_back_select.png */; };
+		8051D2201BEB30AD00D3B19F /* order_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 8051D2121BEB30AD00D3B19F /* order_background.png */; };
+		8051D2211BEB30AD00D3B19F /* order_drag_move_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8051D2131BEB30AD00D3B19F /* order_drag_move_bg.png */; };
+		8051D2221BEB30AD00D3B19F /* topnav_orderbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 8051D2141BEB30AD00D3B19F /* topnav_orderbutton.png */; };
+		8051D2231BEB30AD00D3B19F /* topnav_orderbutton_selected_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 8051D2151BEB30AD00D3B19F /* topnav_orderbutton_selected_unselected.png */; };
+		8051D2241BEB30AD00D3B19F /* OrderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8051D2171BEB30AD00D3B19F /* OrderButton.m */; };
+		8051D2251BEB30AD00D3B19F /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8051D2191BEB30AD00D3B19F /* OrderViewController.m */; };
+		8051D2261BEB30AD00D3B19F /* TouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8051D21B1BEB30AD00D3B19F /* TouchView.m */; };
+		8051D2271BEB30AD00D3B19F /* TouchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8051D21D1BEB30AD00D3B19F /* TouchViewModel.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8051D1FE1BEA08E800D3B19F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8051D1DC1BEA08E700D3B19F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8051D1E31BEA08E700D3B19F;
+			remoteInfo = CJNewsOrderDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8051D1E41BEA08E700D3B19F /* CJNewsOrderDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CJNewsOrderDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8051D1E81BEA08E700D3B19F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8051D1E91BEA08E700D3B19F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8051D1EB1BEA08E700D3B19F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		8051D1EC1BEA08E700D3B19F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		8051D1EE1BEA08E700D3B19F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8051D1EF1BEA08E700D3B19F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8051D1F21BEA08E700D3B19F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8051D1F41BEA08E700D3B19F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		8051D1F71BEA08E700D3B19F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		8051D1FD1BEA08E800D3B19F /* CJNewsOrderDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CJNewsOrderDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8051D2021BEA08E800D3B19F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8051D2031BEA08E800D3B19F /* CJNewsOrderDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJNewsOrderDemoTests.m; sourceTree = "<group>"; };
+		8051D20E1BEB30AD00D3B19F /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		8051D2101BEB30AD00D3B19F /* order_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = order_back.png; sourceTree = "<group>"; };
+		8051D2111BEB30AD00D3B19F /* order_back_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = order_back_select.png; sourceTree = "<group>"; };
+		8051D2121BEB30AD00D3B19F /* order_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = order_background.png; sourceTree = "<group>"; };
+		8051D2131BEB30AD00D3B19F /* order_drag_move_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = order_drag_move_bg.png; sourceTree = "<group>"; };
+		8051D2141BEB30AD00D3B19F /* topnav_orderbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topnav_orderbutton.png; sourceTree = "<group>"; };
+		8051D2151BEB30AD00D3B19F /* topnav_orderbutton_selected_unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topnav_orderbutton_selected_unselected.png; sourceTree = "<group>"; };
+		8051D2161BEB30AD00D3B19F /* OrderButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderButton.h; sourceTree = "<group>"; };
+		8051D2171BEB30AD00D3B19F /* OrderButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderButton.m; sourceTree = "<group>"; };
+		8051D2181BEB30AD00D3B19F /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
+		8051D2191BEB30AD00D3B19F /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
+		8051D21A1BEB30AD00D3B19F /* TouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchView.h; sourceTree = "<group>"; };
+		8051D21B1BEB30AD00D3B19F /* TouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchView.m; sourceTree = "<group>"; };
+		8051D21C1BEB30AD00D3B19F /* TouchViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchViewModel.h; sourceTree = "<group>"; };
+		8051D21D1BEB30AD00D3B19F /* TouchViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchViewModel.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8051D1E11BEA08E700D3B19F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8051D1FA1BEA08E800D3B19F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8051D1DB1BEA08E700D3B19F = {
+			isa = PBXGroup;
+			children = (
+				8051D1E61BEA08E700D3B19F /* CJNewsOrderDemo */,
+				8051D2001BEA08E800D3B19F /* CJNewsOrderDemoTests */,
+				8051D1E51BEA08E700D3B19F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8051D1E51BEA08E700D3B19F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8051D1E41BEA08E700D3B19F /* CJNewsOrderDemo.app */,
+				8051D1FD1BEA08E800D3B19F /* CJNewsOrderDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8051D1E61BEA08E700D3B19F /* CJNewsOrderDemo */ = {
+			isa = PBXGroup;
+			children = (
+				8051D1EB1BEA08E700D3B19F /* AppDelegate.h */,
+				8051D1EC1BEA08E700D3B19F /* AppDelegate.m */,
+				8051D1EE1BEA08E700D3B19F /* ViewController.h */,
+				8051D1EF1BEA08E700D3B19F /* ViewController.m */,
+				8051D2281BEB30FB00D3B19F /* Controller */,
+				8051D2291BEB30FB00D3B19F /* res_image */,
+				8051D1F11BEA08E700D3B19F /* Main.storyboard */,
+				8051D20D1BEB30AD00D3B19F /* CJNewsOrder */,
+				8051D1F41BEA08E700D3B19F /* Images.xcassets */,
+				8051D1F61BEA08E700D3B19F /* LaunchScreen.xib */,
+				8051D1E71BEA08E700D3B19F /* Supporting Files */,
+			);
+			path = CJNewsOrderDemo;
+			sourceTree = "<group>";
+		};
+		8051D1E71BEA08E700D3B19F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8051D1E81BEA08E700D3B19F /* Info.plist */,
+				8051D1E91BEA08E700D3B19F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8051D2001BEA08E800D3B19F /* CJNewsOrderDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				8051D2031BEA08E800D3B19F /* CJNewsOrderDemoTests.m */,
+				8051D2011BEA08E800D3B19F /* Supporting Files */,
+			);
+			path = CJNewsOrderDemoTests;
+			sourceTree = "<group>";
+		};
+		8051D2011BEA08E800D3B19F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8051D2021BEA08E800D3B19F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8051D20D1BEB30AD00D3B19F /* CJNewsOrder */ = {
+			isa = PBXGroup;
+			children = (
+				8051D20E1BEB30AD00D3B19F /* Header.h */,
+				8051D20F1BEB30AD00D3B19F /* images */,
+				8051D2161BEB30AD00D3B19F /* OrderButton.h */,
+				8051D2171BEB30AD00D3B19F /* OrderButton.m */,
+				8051D2181BEB30AD00D3B19F /* OrderViewController.h */,
+				8051D2191BEB30AD00D3B19F /* OrderViewController.m */,
+				8051D21A1BEB30AD00D3B19F /* TouchView.h */,
+				8051D21B1BEB30AD00D3B19F /* TouchView.m */,
+				8051D21C1BEB30AD00D3B19F /* TouchViewModel.h */,
+				8051D21D1BEB30AD00D3B19F /* TouchViewModel.m */,
+			);
+			name = CJNewsOrder;
+			path = ../../CJNewsOrder;
+			sourceTree = "<group>";
+		};
+		8051D20F1BEB30AD00D3B19F /* images */ = {
+			isa = PBXGroup;
+			children = (
+				8051D2101BEB30AD00D3B19F /* order_back.png */,
+				8051D2111BEB30AD00D3B19F /* order_back_select.png */,
+				8051D2121BEB30AD00D3B19F /* order_background.png */,
+				8051D2131BEB30AD00D3B19F /* order_drag_move_bg.png */,
+				8051D2141BEB30AD00D3B19F /* topnav_orderbutton.png */,
+				8051D2151BEB30AD00D3B19F /* topnav_orderbutton_selected_unselected.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		8051D2281BEB30FB00D3B19F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8051D2291BEB30FB00D3B19F /* res_image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = res_image;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8051D1E31BEA08E700D3B19F /* CJNewsOrderDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8051D2071BEA08E800D3B19F /* Build configuration list for PBXNativeTarget "CJNewsOrderDemo" */;
+			buildPhases = (
+				8051D1E01BEA08E700D3B19F /* Sources */,
+				8051D1E11BEA08E700D3B19F /* Frameworks */,
+				8051D1E21BEA08E700D3B19F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CJNewsOrderDemo;
+			productName = CJNewsOrderDemo;
+			productReference = 8051D1E41BEA08E700D3B19F /* CJNewsOrderDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8051D1FC1BEA08E800D3B19F /* CJNewsOrderDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8051D20A1BEA08E800D3B19F /* Build configuration list for PBXNativeTarget "CJNewsOrderDemoTests" */;
+			buildPhases = (
+				8051D1F91BEA08E800D3B19F /* Sources */,
+				8051D1FA1BEA08E800D3B19F /* Frameworks */,
+				8051D1FB1BEA08E800D3B19F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8051D1FF1BEA08E800D3B19F /* PBXTargetDependency */,
+			);
+			name = CJNewsOrderDemoTests;
+			productName = CJNewsOrderDemoTests;
+			productReference = 8051D1FD1BEA08E800D3B19F /* CJNewsOrderDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8051D1DC1BEA08E700D3B19F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = lichq;
+				TargetAttributes = {
+					8051D1E31BEA08E700D3B19F = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					8051D1FC1BEA08E800D3B19F = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 8051D1E31BEA08E700D3B19F;
+					};
+				};
+			};
+			buildConfigurationList = 8051D1DF1BEA08E700D3B19F /* Build configuration list for PBXProject "CJNewsOrderDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8051D1DB1BEA08E700D3B19F;
+			productRefGroup = 8051D1E51BEA08E700D3B19F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8051D1E31BEA08E700D3B19F /* CJNewsOrderDemo */,
+				8051D1FC1BEA08E800D3B19F /* CJNewsOrderDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8051D1E21BEA08E700D3B19F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8051D2231BEB30AD00D3B19F /* topnav_orderbutton_selected_unselected.png in Resources */,
+				8051D2221BEB30AD00D3B19F /* topnav_orderbutton.png in Resources */,
+				8051D2201BEB30AD00D3B19F /* order_background.png in Resources */,
+				8051D21F1BEB30AD00D3B19F /* order_back_select.png in Resources */,
+				8051D1F31BEA08E700D3B19F /* Main.storyboard in Resources */,
+				8051D21E1BEB30AD00D3B19F /* order_back.png in Resources */,
+				8051D2211BEB30AD00D3B19F /* order_drag_move_bg.png in Resources */,
+				8051D1F81BEA08E700D3B19F /* LaunchScreen.xib in Resources */,
+				8051D1F51BEA08E700D3B19F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8051D1FB1BEA08E800D3B19F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8051D1E01BEA08E700D3B19F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8051D2261BEB30AD00D3B19F /* TouchView.m in Sources */,
+				8051D2241BEB30AD00D3B19F /* OrderButton.m in Sources */,
+				8051D2251BEB30AD00D3B19F /* OrderViewController.m in Sources */,
+				8051D1F01BEA08E700D3B19F /* ViewController.m in Sources */,
+				8051D1ED1BEA08E700D3B19F /* AppDelegate.m in Sources */,
+				8051D1EA1BEA08E700D3B19F /* main.m in Sources */,
+				8051D2271BEB30AD00D3B19F /* TouchViewModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8051D1F91BEA08E800D3B19F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8051D2041BEA08E800D3B19F /* CJNewsOrderDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8051D1FF1BEA08E800D3B19F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8051D1E31BEA08E700D3B19F /* CJNewsOrderDemo */;
+			targetProxy = 8051D1FE1BEA08E800D3B19F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8051D1F11BEA08E700D3B19F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8051D1F21BEA08E700D3B19F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8051D1F61BEA08E700D3B19F /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8051D1F71BEA08E700D3B19F /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8051D2051BEA08E800D3B19F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8051D2061BEA08E800D3B19F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8051D2081BEA08E800D3B19F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CJNewsOrderDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8051D2091BEA08E800D3B19F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CJNewsOrderDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8051D20B1BEA08E800D3B19F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CJNewsOrderDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CJNewsOrderDemo.app/CJNewsOrderDemo";
+			};
+			name = Debug;
+		};
+		8051D20C1BEA08E800D3B19F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CJNewsOrderDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CJNewsOrderDemo.app/CJNewsOrderDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8051D1DF1BEA08E700D3B19F /* Build configuration list for PBXProject "CJNewsOrderDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8051D2051BEA08E800D3B19F /* Debug */,
+				8051D2061BEA08E800D3B19F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8051D2071BEA08E800D3B19F /* Build configuration list for PBXNativeTarget "CJNewsOrderDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8051D2081BEA08E800D3B19F /* Debug */,
+				8051D2091BEA08E800D3B19F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		8051D20A1BEA08E800D3B19F /* Build configuration list for PBXNativeTarget "CJNewsOrderDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8051D20B1BEA08E800D3B19F /* Debug */,
+				8051D20C1BEA08E800D3B19F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8051D1DC1BEA08E700D3B19F /* Project object */;
+}
