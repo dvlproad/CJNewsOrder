@@ -15,7 +15,9 @@
 @interface OrderViewController : UIViewController
 {
     @public
-    NSArray * _modelArr1;
+    NSArray *array_order_YES;
+    NSArray *array_order_NO;
+    
     NSMutableArray * _viewArr1;
     NSMutableArray * _viewArr2;
 }

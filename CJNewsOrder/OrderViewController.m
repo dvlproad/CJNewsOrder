@@ -31,20 +31,15 @@
 
 
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    
+- (void)initizal{
     NSString *libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *filePath_order_YES = [libraryPath stringByAppendingPathComponent:kPath_Order_YES];
     NSString *filePath_order_NO = [libraryPath stringByAppendingPathComponent:kPath_Order_NO];
     
-    
     if (![[NSFileManager defaultManager] fileExistsAtPath:filePath_order_YES]) {
         
-        NSMutableArray *array_order_YES = [NSMutableArray array];
-        NSMutableArray *array_order_NO = [NSMutableArray array];
+        NSMutableArray *array_order_YES_Ori = [NSMutableArray array]; //Origin
+        NSMutableArray *array_order_NO_Ori = [NSMutableArray array];
         
         for (int i = 0; i < [self.channelNames count]; i++) {
             NSString *channelName = [self.channelNames objectAtIndex:i];
@@ -52,27 +47,49 @@
             TouchViewModel *touchViewModel = [[TouchViewModel alloc]initWithTitle:channelName urlString:channelUrl];
             
             if (i < KDefaultCountOfUpsideList - 1) {
-                [array_order_YES addObject:touchViewModel];
+                [array_order_YES_Ori addObject:touchViewModel];
             }else{
-                [array_order_NO addObject:touchViewModel];
+                [array_order_NO_Ori addObject:touchViewModel];
             }
             
         }
         
-        NSData *data_order_YES = [NSKeyedArchiver archivedDataWithRootObject:array_order_YES];
+        NSData *data_order_YES = [NSKeyedArchiver archivedDataWithRootObject:array_order_YES_Ori];
         [data_order_YES writeToFile:filePath_order_YES atomically:YES];
         
-        NSData *data_order_NO = [NSKeyedArchiver archivedDataWithRootObject:array_order_NO];
+        NSData *data_order_NO = [NSKeyedArchiver archivedDataWithRootObject:array_order_NO_Ori];
         [data_order_NO writeToFile:filePath_order_NO atomically:YES];
     }
     
-    _modelArr1 = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath_order_YES];
-    NSArray *modelArr2 = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath_order_NO];
+    array_order_YES = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath_order_YES];
+    array_order_NO = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath_order_NO];
+}
+
+
+//已订阅的内容所占的行数
+- (unsigned long )row_order_YES_count{
+    unsigned long row_order = 0;
+    if (array_order_YES.count%5 == 0) {
+        row_order = array_order_YES.count/5;
+    }else{
+        row_order = array_order_YES.count/5 + 1;
+    }
+    
+    return row_order;
+}
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
+    
+    
+    [self initizal];
+    
     
     _viewArr1 = [[NSMutableArray alloc] init];
     _viewArr2 = [[NSMutableArray alloc] init];
-    
-    
     
     
     
@@ -84,7 +101,7 @@
     
     
     
-    _titleLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(110, KTableStartPointY + KButtonHeight * ([self array2StartY] - 1) + 22, 100, 20)];
+    _titleLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(110, KTableStartPointY + KButtonHeight * [self row_order_YES_count] + 22, 100, 20)];
     _titleLabel2.text = @"更多频道";
     [_titleLabel2 setFont:[UIFont systemFontOfSize:10]];
     [_titleLabel2 setTextAlignment:NSTextAlignmentCenter];
@@ -92,7 +109,7 @@
     [self.view addSubview:_titleLabel2];
     
     
-    for (int i = 0; i < _modelArr1.count; i++) {
+    for (int i = 0; i < array_order_YES.count; i++) {
         TouchView * touchView = [[TouchView alloc] initWithFrame:CGRectMake(KTableStartPointX + KButtonWidth * (i%5), KTableStartPointY + KButtonHeight * (i/5), KButtonWidth, KButtonHeight)];
         [touchView setBackgroundColor:[UIColor colorWithRed:210/255.0 green:210/255.0 blue:210/255.0 alpha:1.0]];
         
@@ -106,39 +123,36 @@
             
             [touchView.label setTextColor:[UIColor colorWithRed:99/255.0 green:99/255.0 blue:99/255.0 alpha:1.0]];
         }
-        touchView.label.text = [[_modelArr1 objectAtIndex:i] title];
+        touchView.label.text = [[array_order_YES objectAtIndex:i] title];
         [touchView.label setTextAlignment:NSTextAlignmentCenter];
         [touchView setMoreChannelsLabel:_titleLabel2];
         touchView->_viewArr11 = _viewArr1;
         touchView->_viewArr22 = _viewArr2;
-        [touchView setTouchViewModel:[_modelArr1 objectAtIndex:i]];
+        [touchView setTouchViewModel:[array_order_YES objectAtIndex:i]];
         
         [self.view addSubview:touchView];
     }
     
-    for (int i = 0; i < modelArr2.count; i++) {
-        TouchView * touchView = [[TouchView alloc] initWithFrame:CGRectMake(KTableStartPointX + KButtonWidth * (i%5), KTableStartPointY + [self array2StartY] * KButtonHeight + KButtonHeight * (i/5), KButtonWidth, KButtonHeight)];
+    for (int i = 0; i < array_order_NO.count; i++) {
+        TouchView * touchView = [[TouchView alloc] initWithFrame:CGRectMake(KTableStartPointX + KButtonWidth * (i%5), KTableStartPointY + ([self row_order_YES_count]+1) * KButtonHeight + KButtonHeight * (i/5), KButtonWidth, KButtonHeight)];
         
         [touchView setBackgroundColor:[UIColor colorWithRed:210/255.0 green:210/255.0 blue:210/255.0 alpha:1.0]];
         
         [_viewArr2 addObject:touchView];
         touchView->_array = _viewArr2;
         
-        touchView.label.text = [[modelArr2 objectAtIndex:i] title];
+        touchView.label.text = [[array_order_NO objectAtIndex:i] title];
         [touchView.label setTextColor:[UIColor colorWithRed:99/255.0 green:99/255.0 blue:99/255.0 alpha:1.0]];
         [touchView.label setTextAlignment:NSTextAlignmentCenter];
         [touchView setMoreChannelsLabel:_titleLabel2];
         touchView->_viewArr11 = _viewArr1;
         touchView->_viewArr22 = _viewArr2;
-        [touchView setTouchViewModel:[modelArr2 objectAtIndex:i]];
+        [touchView setTouchViewModel:[array_order_NO objectAtIndex:i]];
         
         [self.view addSubview:touchView];
         
         
     }
-    
-    
-
     
 
     self.backButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -149,16 +163,6 @@
 }
 
 
-
-- (unsigned long )array2StartY{
-    unsigned long y = 0;
-
-    y = _modelArr1.count/5 + 2;
-    if (_modelArr1.count%5 == 0) {
-        y -= 1;
-    }
-    return y;
-}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

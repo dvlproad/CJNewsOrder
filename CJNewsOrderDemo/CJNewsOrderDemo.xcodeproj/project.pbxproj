@@ -50,7 +50,6 @@
 		8051D1FD1BEA08E800D3B19F /* CJNewsOrderDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CJNewsOrderDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8051D2021BEA08E800D3B19F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8051D2031BEA08E800D3B19F /* CJNewsOrderDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJNewsOrderDemoTests.m; sourceTree = "<group>"; };
-		8051D20E1BEB30AD00D3B19F /* Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		8051D2101BEB30AD00D3B19F /* order_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = order_back.png; sourceTree = "<group>"; };
 		8051D2111BEB30AD00D3B19F /* order_back_select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = order_back_select.png; sourceTree = "<group>"; };
 		8051D2121BEB30AD00D3B19F /* order_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = order_background.png; sourceTree = "<group>"; };
@@ -150,7 +149,6 @@
 		8051D20D1BEB30AD00D3B19F /* CJNewsOrder */ = {
 			isa = PBXGroup;
 			children = (
-				8051D20E1BEB30AD00D3B19F /* Header.h */,
 				8051D20F1BEB30AD00D3B19F /* images */,
 				8051D2161BEB30AD00D3B19F /* OrderButton.h */,
 				8051D2171BEB30AD00D3B19F /* OrderButton.m */,
@@ -495,6 +493,7 @@
 				8051D2091BEA08E800D3B19F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8051D20A1BEA08E800D3B19F /* Build configuration list for PBXNativeTarget "CJNewsOrderDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +502,7 @@
 				8051D20C1BEA08E800D3B19F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
