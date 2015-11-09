@@ -33,6 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.title = NSLocalizedString(@"网易新闻", nil);
     
     NSArray *channelNames = [NSArray arrayWithObjects:KChannelList, nil] ;
     NSArray *channelUrls = [NSArray arrayWithObjects:KChannelUrlStringList, nil];

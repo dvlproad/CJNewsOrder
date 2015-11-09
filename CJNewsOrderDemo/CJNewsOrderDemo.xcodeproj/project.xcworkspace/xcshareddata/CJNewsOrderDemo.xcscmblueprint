@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "77E4448B4BC5D46B661DAD7B7C6889F21AE17008",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "77E4448B4BC5D46B661DAD7B7C6889F21AE17008" : 0,
+    "340CAEDF0F9B76C1AC79BFEFB25E9A4860791729" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4C7918B5-83FE-4F29-8849-8E3372265E65",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "77E4448B4BC5D46B661DAD7B7C6889F21AE17008" : "CJNewsOrder\/",
+    "340CAEDF0F9B76C1AC79BFEFB25E9A4860791729" : "CJSliderViewController\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "CJNewsOrderDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "CJNewsOrderDemo\/CJNewsOrderDemo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dvlproad\/CJSliderViewController.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "340CAEDF0F9B76C1AC79BFEFB25E9A4860791729"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dvlproad\/CJNewsOrder.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "77E4448B4BC5D46B661DAD7B7C6889F21AE17008"
+    }
+  ]
+}

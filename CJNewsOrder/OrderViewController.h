@@ -1,9 +1,9 @@
 //
 //  OrderViewController.h
-//  ifengNewsOrderDemo
+//  CJNewsOrderDemo
 //
-//  Created by zer0 on 14-2-27.
-//  Copyright (c) 2014年 zer0. All rights reserved.
+//  Created by lichq on 15/11/4.
+//  Copyright (c) 2015年 lichq. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -18,8 +18,8 @@
     NSArray *array_order_YES;
     NSArray *array_order_NO;
     
-    NSMutableArray * _viewArr1;
-    NSMutableArray * _viewArr2;
+    NSMutableArray *_viewArr1;
+    NSMutableArray *_viewArr2;
 }
 @property (nonatomic,retain) NSArray *channelNames;
 @property (nonatomic,retain) NSArray *channelUrls;

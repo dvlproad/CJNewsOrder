@@ -1,9 +1,9 @@
 //
 //  TouchViewModel.h
-//  ifengNewsOrderDemo
+//  CJNewsOrderDemo
 //
-//  Created by zer0 on 14-2-27.
-//  Copyright (c) 2014年 zer0. All rights reserved.
+//  Created by lichq on 15/11/4.
+//  Copyright (c) 2015年 lichq. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

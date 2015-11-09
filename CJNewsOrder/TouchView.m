@@ -1,9 +1,9 @@
 //
 //  TouchView.m
-//  TouchDemo
+//  CJNewsOrderDemo
 //
-//  Created by Zer0 on 13-8-11.
-//  Copyright (c) 2013年 Zer0. All rights reserved.
+//  Created by lichq on 15/11/4.
+//  Copyright (c) 2015年 lichq. All rights reserved.
 //
 
 #import "TouchView.h"
@@ -76,12 +76,12 @@
         }
         
         
-        else if (([self buttonInArrayArea1:_viewArr11 Point:point] || [self buttonInArrayArea2:_viewArr22 Point:point])&&!(point.x - _point.x > KTableStartPointX && point.x - _point.x < KTableStartPointX + KButtonWidth && point.y - _point.y > KTableStartPointY && point.y - _point.y < KTableStartPointY + KButtonHeight)){
-            if (point.x < KTableStartPointX || point.y < KTableStartPointY) {
+        else if (([self buttonInArrayArea1:_viewArr11 Point:point] || [self buttonInArrayArea2:_viewArr22 Point:point])&&!(point.x - _point.x > kMarginLeft && point.x - _point.x < kMarginLeft + KButtonWidth && point.y - _point.y > KTableStartPointY && point.y - _point.y < KTableStartPointY + KButtonHeight)){
+            if (point.x < kMarginLeft || point.y < KTableStartPointY) {
                 [self setFrame:CGRectMake(_point2.x - _point.x, _point2.y - _point.y, self.frame.size.width, self.frame.size.height)];
             }
             else{
-                [self setFrame:CGRectMake(KTableStartPointX + (a + KButtonWidth/2 - KTableStartPointX)/KButtonWidth*KButtonWidth, KTableStartPointY + (b + KButtonHeight/2 - KTableStartPointY)/KButtonHeight*KButtonHeight, self.frame.size.width, self.frame.size.height)];
+                [self setFrame:CGRectMake(kMarginLeft + (a + KButtonWidth/2 - kMarginLeft)/KButtonWidth*KButtonWidth, KTableStartPointY + (b + KButtonHeight/2 - KTableStartPointY)/KButtonHeight*KButtonHeight, self.frame.size.width, self.frame.size.height)];
             }
             
         }
@@ -115,7 +115,7 @@
                 
                 if ([self buttonInArrayArea1:_viewArr11 Point:point]) {
                     
-                    int index = ((int)newX - KTableStartPointX)/KButtonWidth + (5 * (((int)newY - KTableStartPointY)/KButtonHeight));
+                    int index = ((int)newX - kMarginLeft)/KButtonWidth + (5 * (((int)newY - KTableStartPointY)/KButtonHeight));
                     [ _array removeObject:self];
                     [_viewArr11 insertObject:self atIndex:index];
                     _array = _viewArr11;
@@ -131,7 +131,7 @@
                     
                 }
                 else if([self buttonInArrayArea2:_viewArr22 Point:point]){
-                    unsigned long index = ((unsigned long )(newX) - KTableStartPointX)/KButtonWidth + (5 * (((int)(newY) - [self array2StartY] * KButtonHeight - KTableStartPointY)/KButtonHeight));
+                    unsigned long index = ((unsigned long )(newX) - kMarginLeft)/KButtonWidth + (5 * (((int)(newY) - [self array2StartY] * KButtonHeight - KTableStartPointY)/KButtonHeight));
                     [ _array removeObject:self];
                     [_viewArr22 insertObject:self atIndex:index];
                     [self animationAction2a];
@@ -146,7 +146,7 @@
             }
             else if ( _array == _viewArr11) {
                 if ([self buttonInArrayArea1:_viewArr11 Point:point]) {
-                    int index = ((int)newX - KTableStartPointX)/KButtonWidth + (5 * (((int)(newY) - KTableStartPointY)/KButtonHeight));
+                    int index = ((int)newX - kMarginLeft)/KButtonWidth + (5 * (((int)(newY) - KTableStartPointY)/KButtonHeight));
                     [ _array removeObject:self];
                     [_viewArr11 insertObject:self atIndex:index];
                     _array = _viewArr11;
@@ -161,7 +161,7 @@
                     [self animationAction2];
                 }
                 else if([self buttonInArrayArea2:_viewArr22 Point:point]){
-                    unsigned long index = ((unsigned long)(newX) - KTableStartPointX)/KButtonWidth + (5 * (((int)(newY) - [self array2StartY] * KButtonHeight - KTableStartPointY)/KButtonHeight));
+                    unsigned long index = ((unsigned long)(newX) - kMarginLeft)/KButtonWidth + (5 * (((int)(newY) - [self array2StartY] * KButtonHeight - KTableStartPointY)/KButtonHeight));
                     [ _array removeObject:self];
                     [_viewArr22 insertObject:self atIndex:index];
                     _array = _viewArr22;
@@ -182,7 +182,7 @@
     for (int i = 0; i < _viewArr11.count; i++) {
         [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
                 
-            [[_viewArr11 objectAtIndex:i] setFrame:CGRectMake(KTableStartPointX + (i%5) * KButtonWidth, KTableStartPointY + (i/5)* KButtonHeight, KButtonWidth, KButtonHeight)];
+            [[_viewArr11 objectAtIndex:i] setFrame:CGRectMake(kMarginLeft + (i%5) * KButtonWidth, KTableStartPointY + (i/5)* KButtonHeight, KButtonWidth, KButtonHeight)];
         } completion:^(BOOL finished){
                 
         }];
@@ -193,7 +193,7 @@
         if ([_viewArr11 objectAtIndex:i] != self) {
             [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
                 
-                [[_viewArr11 objectAtIndex:i] setFrame:CGRectMake(KTableStartPointX + (i%5) * KButtonWidth, KTableStartPointY + (i/5)* KButtonHeight, KButtonWidth, KButtonHeight)];
+                [[_viewArr11 objectAtIndex:i] setFrame:CGRectMake(kMarginLeft + (i%5) * KButtonWidth, KTableStartPointY + (i/5)* KButtonHeight, KButtonWidth, KButtonHeight)];
             } completion:^(BOOL finished){
                 
             }];
@@ -206,7 +206,7 @@
         
         [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
             
-            [[_viewArr22 objectAtIndex:i] setFrame:CGRectMake(KTableStartPointX + (i%5) * KButtonWidth, KTableStartPointY + [self array2StartY] * KButtonHeight + (i/5)* KButtonHeight, KButtonWidth, KButtonHeight)];
+            [[_viewArr22 objectAtIndex:i] setFrame:CGRectMake(kMarginLeft + (i%5) * KButtonWidth, KTableStartPointY + [self array2StartY] * KButtonHeight + (i/5)* KButtonHeight, KButtonWidth, KButtonHeight)];
             
         } completion:^(BOOL finished){
             
@@ -227,7 +227,7 @@
             [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
                 
                 
-                [[_viewArr22 objectAtIndex:i] setFrame:CGRectMake(KTableStartPointX + (i%5) * KButtonWidth, KTableStartPointY + [self array2StartY] * KButtonHeight + (i/5)* KButtonHeight, KButtonWidth, KButtonHeight)];
+                [[_viewArr22 objectAtIndex:i] setFrame:CGRectMake(kMarginLeft + (i%5) * KButtonWidth, KTableStartPointY + [self array2StartY] * KButtonHeight + (i/5)* KButtonHeight, KButtonWidth, KButtonHeight)];
                 
             } completion:^(BOOL finished){
             }];
@@ -251,7 +251,7 @@
         
         [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
             
-            [[_viewArr11 objectAtIndex:i] setFrame:CGRectMake(KTableStartPointX + (i%5) * KButtonWidth, KTableStartPointY + (i/5)* KButtonHeight, KButtonWidth, KButtonHeight)];
+            [[_viewArr11 objectAtIndex:i] setFrame:CGRectMake(kMarginLeft + (i%5) * KButtonWidth, KTableStartPointY + (i/5)* KButtonHeight, KButtonWidth, KButtonHeight)];
         } completion:^(BOOL finished){
             
         }];
@@ -259,7 +259,7 @@
     for (int i = 0; i < _viewArr22.count; i++) {
         [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
             
-            [[_viewArr22 objectAtIndex:i] setFrame:CGRectMake(KTableStartPointX + (i%5) * KButtonWidth, KTableStartPointY + [self array2StartY] * KButtonHeight + (i/5)* KButtonHeight, KButtonWidth, KButtonHeight)];
+            [[_viewArr22 objectAtIndex:i] setFrame:CGRectMake(kMarginLeft + (i%5) * KButtonWidth, KTableStartPointY + [self array2StartY] * KButtonHeight + (i/5)* KButtonHeight, KButtonWidth, KButtonHeight)];
             
         } completion:^(BOOL finished){
             
@@ -280,7 +280,7 @@
     CGFloat newY = point.y - _point.y + KButtonHeight/2;
     int a =  arr.count%5;
     unsigned long b =  arr.count/5;
-    if ((newX > KTableStartPointX && newX < KTableStartPointX + 5 * KButtonWidth && newY > KTableStartPointY && newY < KTableStartPointY + b * KButtonHeight) || (newX > KTableStartPointX && newX < KTableStartPointX + a * KButtonWidth && newY > KTableStartPointY + b * KButtonHeight && newY < KTableStartPointY + (b+1) * KButtonHeight) ) {
+    if ((newX > kMarginLeft && newX < kMarginLeft + 5 * KButtonWidth && newY > KTableStartPointY && newY < KTableStartPointY + b * KButtonHeight) || (newX > kMarginLeft && newX < kMarginLeft + a * KButtonWidth && newY > KTableStartPointY + b * KButtonHeight && newY < KTableStartPointY + (b+1) * KButtonHeight) ) {
         return YES;
     }
     return NO;
@@ -290,7 +290,7 @@
     CGFloat newY = point.y - _point.y + KButtonHeight/2;
     int a =  arr.count%5;
     unsigned long b =  arr.count/5;
-    if ((newX > KTableStartPointX && newX < KTableStartPointX + 5 * KButtonWidth && newY > KTableStartPointY + [self array2StartY] * KButtonHeight && newY < KTableStartPointY + (b + [self array2StartY]) * KButtonHeight) || (newX > KTableStartPointX && newX < KTableStartPointX + a * KButtonWidth && newY > KTableStartPointY + (b + [self array2StartY]) * KButtonHeight && newY < KTableStartPointY + (b+[self array2StartY]+1) * KButtonHeight) ) {
+    if ((newX > kMarginLeft && newX < kMarginLeft + 5 * KButtonWidth && newY > KTableStartPointY + [self array2StartY] * KButtonHeight && newY < KTableStartPointY + (b + [self array2StartY]) * KButtonHeight) || (newX > kMarginLeft && newX < kMarginLeft + a * KButtonWidth && newY > KTableStartPointY + (b + [self array2StartY]) * KButtonHeight && newY < KTableStartPointY + (b+[self array2StartY]+1) * KButtonHeight) ) {
         return YES;
     }
     return NO;

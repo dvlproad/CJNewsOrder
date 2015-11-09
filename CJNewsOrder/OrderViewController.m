@@ -1,9 +1,9 @@
 //
 //  OrderViewController.m
-//  ifengNewsOrderDemo
+//  CJNewsOrderDemo
 //
-//  Created by zer0 on 14-2-27.
-//  Copyright (c) 2014年 zer0. All rights reserved.
+//  Created by lichq on 15/11/4.
+//  Copyright (c) 2015年 lichq. All rights reserved.
 //
 
 #import "OrderViewController.h"
@@ -31,7 +31,7 @@
 
 
 
-- (void)initizal{
+- (void)initizalData{
     NSString *libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *filePath_order_YES = [libraryPath stringByAppendingPathComponent:kPath_Order_YES];
     NSString *filePath_order_NO = [libraryPath stringByAppendingPathComponent:kPath_Order_NO];
@@ -85,12 +85,24 @@
 	// Do any additional setup after loading the view.
     
     
-    [self initizal];
+    [self initizalData];
     
     
     _viewArr1 = [[NSMutableArray alloc] init];
     _viewArr2 = [[NSMutableArray alloc] init];
     
+    
+    
+    CGFloat marginLeft = kMarginLeft;   //25;//订阅项目与边缘的距离
+    NSInteger count_per_row = 5;
+    CGFloat width_item = (self.view.frame.size.width - 2*marginLeft)/count_per_row;
+    CGFloat height_item = KButtonHeight;    //40;
+    //item的背景颜色
+    UIColor *color_item = [UIColor colorWithRed:210/255.0 green:210/255.0 blue:210/255.0 alpha:1.0];
+    //头条的文字颜色
+    UIColor *color_text_firstItem = [UIColor colorWithRed:187/255.0 green:1/255.0 blue:1/255.0 alpha:1.0];
+    //非头条的文字颜色
+    UIColor *color_text_normal = [UIColor colorWithRed:99/255.0 green:99/255.0 blue:99/255.0 alpha:1.0];
     
     
     _titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(110, 25, 100, 40)];
@@ -100,8 +112,7 @@
     [self.view addSubview:_titleLabel];
     
     
-    
-    _titleLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(110, KTableStartPointY + KButtonHeight * [self row_order_YES_count] + 22, 100, 20)];
+    _titleLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(110, KTableStartPointY + height_item * [self row_order_YES_count] + 22, 100, 20)];
     _titleLabel2.text = @"更多频道";
     [_titleLabel2 setFont:[UIFont systemFontOfSize:10]];
     [_titleLabel2 setTextAlignment:NSTextAlignmentCenter];
@@ -109,19 +120,21 @@
     [self.view addSubview:_titleLabel2];
     
     
+    
     for (int i = 0; i < array_order_YES.count; i++) {
-        TouchView * touchView = [[TouchView alloc] initWithFrame:CGRectMake(KTableStartPointX + KButtonWidth * (i%5), KTableStartPointY + KButtonHeight * (i/5), KButtonWidth, KButtonHeight)];
-        [touchView setBackgroundColor:[UIColor colorWithRed:210/255.0 green:210/255.0 blue:210/255.0 alpha:1.0]];
+        CGFloat x_item = marginLeft + width_item * (i%count_per_row);
+        CGFloat y_item = KTableStartPointY + height_item * (i/count_per_row);
+        CGRect rect_item = CGRectMake(x_item, y_item, width_item, height_item);
+        TouchView *touchView = [[TouchView alloc]initWithFrame:rect_item];
+        [touchView setBackgroundColor:color_item];
         
         [_viewArr1 addObject:touchView];
         
         touchView->_array = _viewArr1;
         if (i == 0) {
-            [touchView.label setTextColor:[UIColor colorWithRed:187/255.0 green:1/255.0 blue:1/255.0 alpha:1.0]];
-        }
-        else{
-            
-            [touchView.label setTextColor:[UIColor colorWithRed:99/255.0 green:99/255.0 blue:99/255.0 alpha:1.0]];
+            [touchView.label setTextColor:color_text_firstItem];
+        }else{
+            [touchView.label setTextColor:color_text_normal];
         }
         touchView.label.text = [[array_order_YES objectAtIndex:i] title];
         [touchView.label setTextAlignment:NSTextAlignmentCenter];
@@ -134,15 +147,17 @@
     }
     
     for (int i = 0; i < array_order_NO.count; i++) {
-        TouchView * touchView = [[TouchView alloc] initWithFrame:CGRectMake(KTableStartPointX + KButtonWidth * (i%5), KTableStartPointY + ([self row_order_YES_count]+1) * KButtonHeight + KButtonHeight * (i/5), KButtonWidth, KButtonHeight)];
-        
-        [touchView setBackgroundColor:[UIColor colorWithRed:210/255.0 green:210/255.0 blue:210/255.0 alpha:1.0]];
+        CGFloat x_item = marginLeft + width_item * (i%count_per_row);
+        CGFloat y_item = KTableStartPointY + height_item * ([self row_order_YES_count]+1) + height_item * (i/count_per_row);
+        CGRect rect_item = CGRectMake(x_item, y_item, width_item, height_item);
+        TouchView *touchView = [[TouchView alloc]initWithFrame:rect_item];
+        [touchView setBackgroundColor:color_item];
         
         [_viewArr2 addObject:touchView];
         touchView->_array = _viewArr2;
         
         touchView.label.text = [[array_order_NO objectAtIndex:i] title];
-        [touchView.label setTextColor:[UIColor colorWithRed:99/255.0 green:99/255.0 blue:99/255.0 alpha:1.0]];
+        [touchView.label setTextColor:color_text_normal];
         [touchView.label setTextAlignment:NSTextAlignmentCenter];
         [touchView setMoreChannelsLabel:_titleLabel2];
         touchView->_viewArr11 = _viewArr1;
@@ -150,8 +165,6 @@
         [touchView setTouchViewModel:[array_order_NO objectAtIndex:i]];
         
         [self.view addSubview:touchView];
-        
-        
     }
     
 
