@@ -17,6 +17,7 @@
 		78E1AEF81BF0F9320059673A /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1AEEC1BF0F9320059673A /* OrderViewController.m */; settings = {ASSET_TAGS = (); }; };
 		78E1AEF91BF0F9320059673A /* TouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1AEEE1BF0F9320059673A /* TouchView.m */; settings = {ASSET_TAGS = (); }; };
 		78E1AEFA1BF0F9320059673A /* TouchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1AEF01BF0F9320059673A /* TouchViewModel.m */; settings = {ASSET_TAGS = (); }; };
+		78E1AF031BF12DB00059673A /* ChannelFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1AF021BF12DB00059673A /* ChannelFile.m */; settings = {ASSET_TAGS = (); }; };
 		8051D1EA1BEA08E700D3B19F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8051D1E91BEA08E700D3B19F /* main.m */; };
 		8051D1ED1BEA08E700D3B19F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8051D1EC1BEA08E700D3B19F /* AppDelegate.m */; };
 		8051D1F01BEA08E700D3B19F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8051D1EF1BEA08E700D3B19F /* ViewController.m */; };
@@ -51,6 +52,8 @@
 		78E1AEEE1BF0F9320059673A /* TouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchView.m; sourceTree = "<group>"; };
 		78E1AEEF1BF0F9320059673A /* TouchViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchViewModel.h; sourceTree = "<group>"; };
 		78E1AEF01BF0F9320059673A /* TouchViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchViewModel.m; sourceTree = "<group>"; };
+		78E1AF011BF12DB00059673A /* ChannelFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelFile.h; sourceTree = "<group>"; };
+		78E1AF021BF12DB00059673A /* ChannelFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelFile.m; sourceTree = "<group>"; };
 		8051D1E41BEA08E700D3B19F /* CJNewsOrderDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CJNewsOrderDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8051D1E81BEA08E700D3B19F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8051D1E91BEA08E700D3B19F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -88,6 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				78E1AEE21BF0F9320059673A /* images_CJNewsOrder */,
+				78E1AF011BF12DB00059673A /* ChannelFile.h */,
+				78E1AF021BF12DB00059673A /* ChannelFile.m */,
 				78E1AEE91BF0F9320059673A /* OrderButton.h */,
 				78E1AEEA1BF0F9320059673A /* OrderButton.m */,
 				78E1AEEB1BF0F9320059673A /* OrderViewController.h */,
@@ -297,6 +302,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78E1AEF91BF0F9320059673A /* TouchView.m in Sources */,
+				78E1AF031BF12DB00059673A /* ChannelFile.m in Sources */,
 				78E1AEF71BF0F9320059673A /* OrderButton.m in Sources */,
 				78E1AEF81BF0F9320059673A /* OrderViewController.m in Sources */,
 				8051D1F01BEA08E700D3B19F /* ViewController.m in Sources */,

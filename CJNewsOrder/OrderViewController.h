@@ -8,21 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-#define kPath_Order_YES @"order_YES.swh"
-#define kPath_Order_NO  @"order_NO.swh"
-
 
 @interface OrderViewController : UIViewController
 {
     @public
-    NSArray *array_order_YES;
-    NSArray *array_order_NO;
-    
     NSMutableArray *_viewArr1;
     NSMutableArray *_viewArr2;
 }
-@property (nonatomic,retain) NSArray *channelNames;
-@property (nonatomic,retain) NSArray *channelUrls;
+@property (nonatomic, strong) NSArray *array_order_YES;
+@property (nonatomic, strong) NSArray *array_order_NO;
 
 @property (nonatomic,retain) UILabel *titleLabel;
 @property (nonatomic,retain) UILabel *titleLabel2;

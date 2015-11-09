@@ -8,12 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+#import "ChannelFile.h"
+#import "TouchViewModel.h"
 @interface OrderButton : UIButton
 
 @property (nonatomic,retain) UIViewController *vc;
-@property (nonatomic,retain) NSArray *channelNames;
-@property (nonatomic,retain) NSArray *channelUrls;
 
-- (void)setExtraPropert_VC:(UIViewController *)vc channelNames:(NSArray *)channelNames channelUrls:(NSArray *)channelUrls;
+- (void)setExtraPropert_VC:(UIViewController *)vc channelsAll:(NSArray *)channelsAll;
+
 
 @end

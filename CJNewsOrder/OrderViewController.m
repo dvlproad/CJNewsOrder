@@ -11,14 +11,14 @@
 #import "TouchView.h"
 
 
-#define KDefaultCountOfUpsideList 10    //默认订阅频道数
-
 
 @interface OrderViewController ()
 
 @end
 
 @implementation OrderViewController
+@synthesize array_order_YES;
+@synthesize array_order_NO;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,41 +29,6 @@
     return self;
 }
 
-
-
-- (void)initizalData{
-    NSString *libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString *filePath_order_YES = [libraryPath stringByAppendingPathComponent:kPath_Order_YES];
-    NSString *filePath_order_NO = [libraryPath stringByAppendingPathComponent:kPath_Order_NO];
-    
-    if (![[NSFileManager defaultManager] fileExistsAtPath:filePath_order_YES]) {
-        
-        NSMutableArray *array_order_YES_Ori = [NSMutableArray array]; //Origin
-        NSMutableArray *array_order_NO_Ori = [NSMutableArray array];
-        
-        for (int i = 0; i < [self.channelNames count]; i++) {
-            NSString *channelName = [self.channelNames objectAtIndex:i];
-            NSString *channelUrl = [self.channelUrls objectAtIndex:i];
-            TouchViewModel *touchViewModel = [[TouchViewModel alloc]initWithTitle:channelName urlString:channelUrl];
-            
-            if (i < KDefaultCountOfUpsideList - 1) {
-                [array_order_YES_Ori addObject:touchViewModel];
-            }else{
-                [array_order_NO_Ori addObject:touchViewModel];
-            }
-            
-        }
-        
-        NSData *data_order_YES = [NSKeyedArchiver archivedDataWithRootObject:array_order_YES_Ori];
-        [data_order_YES writeToFile:filePath_order_YES atomically:YES];
-        
-        NSData *data_order_NO = [NSKeyedArchiver archivedDataWithRootObject:array_order_NO_Ori];
-        [data_order_NO writeToFile:filePath_order_NO atomically:YES];
-    }
-    
-    array_order_YES = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath_order_YES];
-    array_order_NO = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath_order_NO];
-}
 
 
 //已订阅的内容所占的行数
@@ -85,7 +50,7 @@
 	// Do any additional setup after loading the view.
     
     
-    [self initizalData];
+//    [self initizalData_CJNewsOrder];
     
     
     _viewArr1 = [[NSMutableArray alloc] init];

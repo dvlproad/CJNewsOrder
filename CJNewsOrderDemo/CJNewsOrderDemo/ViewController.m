@@ -38,7 +38,14 @@
     if (orderBtn) {
         NSArray *channelNames = [NSArray arrayWithObjects:KChannelList, nil] ;
         NSArray *channelUrls = [NSArray arrayWithObjects:KChannelUrlStringList, nil];
-        [orderBtn setExtraPropert_VC:self channelNames:channelNames channelUrls:channelUrls];
+        NSMutableArray *channels = [[NSMutableArray alloc]init];
+        for (int i = 0; i < channelNames.count; i++) {
+            NSString *channelName = [channelNames objectAtIndex:i];
+            NSString *channelUrl = [channelUrls objectAtIndex:i];
+            TouchViewModel *channel = [[TouchViewModel alloc]initWithTitle:channelName urlString:channelUrl];
+            [channels addObject:channel];
+        }
+        [orderBtn setExtraPropert_VC:self channelsAll:channels];
     }
 }
 
@@ -61,8 +68,9 @@
     orderVCIndex = orderButton.vc.childViewControllers.count;
     
     OrderViewController *orderVC = [[OrderViewController alloc] init];
-    orderVC.channelNames = orderButton.channelNames;
-    orderVC.channelUrls = orderButton.channelUrls;
+    orderVC.array_order_YES = [ChannelFile getChannels_Order_YES];
+    orderVC.array_order_NO = [ChannelFile getChannels_Order_NO];
+    
     UIView *orderView = [orderVC view];
     
     CGFloat width = orderButton.vc.view.bounds.size.width;//本例中orderButton.vc等于self
@@ -91,14 +99,12 @@
     CGFloat height = self.view.bounds.size.height;
     CGRect rect_hidden = CGRectMake(0, - height, width, height);
     
-    OrderViewController * orderVC = [self.childViewControllers objectAtIndex:orderVCIndex];
+    OrderViewController *orderVC = [self.childViewControllers objectAtIndex:orderVCIndex];
     [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
         [orderVC.view setFrame:rect_hidden];
         
     } completion:^(BOOL finished){
-        NSString *libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-        NSString *filePath_order_YES = [libraryPath stringByAppendingPathComponent:kPath_Order_YES];
-        NSString *filePath_order_NO = [libraryPath stringByAppendingPathComponent:kPath_Order_NO];
+        
         
         NSMutableArray *array_order_YES = [NSMutableArray array];
         NSMutableArray *array_order_NO = [NSMutableArray array];
@@ -106,15 +112,13 @@
         for (TouchView * touchView in orderVC->_viewArr1) {
             [array_order_YES addObject:touchView.touchViewModel];
         }
-        NSData *data_order_YES = [NSKeyedArchiver archivedDataWithRootObject:array_order_YES];
-        [data_order_YES writeToFile:filePath_order_YES atomically:YES];
+        [ChannelFile saveChannels_Order_YES:array_order_YES];
         
         
         for (TouchView * touchView in orderVC->_viewArr2) {
             [array_order_NO addObject:touchView.touchViewModel];
         }
-        NSData *data_order_NO = [NSKeyedArchiver archivedDataWithRootObject:array_order_NO];
-        [data_order_NO writeToFile:filePath_order_NO atomically:YES];
+        [ChannelFile saveChannels_Order_NO:array_order_NO];
         
         [[[self.childViewControllers  objectAtIndex:orderVCIndex] view] removeFromSuperview];
         [orderVC removeFromParentViewController];
