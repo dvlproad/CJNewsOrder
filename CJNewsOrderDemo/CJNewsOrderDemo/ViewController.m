@@ -21,6 +21,7 @@
 @interface ViewController ()
 {
     IBOutlet OrderButton *orderButton;
+    NSInteger orderVCIndex;
 }
 
 @end
@@ -49,9 +50,11 @@
     
 //    OrderButton *orderButton = (OrderButton *)sender;
 //    if([[self.view subviews] count]>1){
-//        //        [[[orderButton.vc.view subviews]objectAtIndex:1] removeFromSuperview];
-//        NSLog(@"%@",[orderButton.vc.view subviews]);
+//        [[[orderButton.vc.view subviews]objectAtIndex:1] removeFromSuperview];
+//        NSLog(@"%d:%@", orderButton.vc.view.subviews.count, [orderButton.vc.view subviews]);
+//        NSLog(@"%d:%@", orderButton.vc.childViewControllers.count, orderButton.vc.childViewControllers);
 //    }
+    orderVCIndex = orderButton.vc.childViewControllers.count;
     
     OrderViewController *orderVC = [[OrderViewController alloc] init];
     orderVC.channelNames = orderButton.channelNames;
@@ -74,7 +77,7 @@
 
 
 - (void)backAction{
-    OrderViewController * orderVC = [self.childViewControllers objectAtIndex:0];
+    OrderViewController * orderVC = [self.childViewControllers objectAtIndex:orderVCIndex];
     [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
         [orderVC.view setFrame:CGRectMake(0, - self.view.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height)];
         
@@ -99,7 +102,7 @@
         NSData *data_order_NO = [NSKeyedArchiver archivedDataWithRootObject:array_order_NO];
         [data_order_NO writeToFile:filePath_order_NO atomically:YES];
         
-        [[[self.childViewControllers  objectAtIndex:0] view] removeFromSuperview];
+        [[[self.childViewControllers  objectAtIndex:orderVCIndex] view] removeFromSuperview];
         [orderVC removeFromParentViewController];
         
     }];
