@@ -20,7 +20,7 @@
 
 @interface ViewController ()
 {
-    IBOutlet OrderButton *orderButton;
+    IBOutlet OrderButton *orderBtn;
     NSInteger orderVCIndex;
 }
 
@@ -35,10 +35,11 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.title = NSLocalizedString(@"网易新闻", nil);
     
-    NSArray *channelNames = [NSArray arrayWithObjects:KChannelList, nil] ;
-    NSArray *channelUrls = [NSArray arrayWithObjects:KChannelUrlStringList, nil];
-    [orderButton setExtraPropert_VC:self channelNames:channelNames channelUrls:channelUrls];
-    
+    if (orderBtn) {
+        NSArray *channelNames = [NSArray arrayWithObjects:KChannelList, nil] ;
+        NSArray *channelUrls = [NSArray arrayWithObjects:KChannelUrlStringList, nil];
+        [orderBtn setExtraPropert_VC:self channelNames:channelNames channelUrls:channelUrls];
+    }
 }
 
 - (void)viewDidLayoutSubviews{
@@ -47,9 +48,11 @@
     
 }
 
+
+#pragma mark - 类似网易新闻的订阅功能
 - (IBAction)orderViewOut:(id)sender{
     
-//    OrderButton *orderButton = (OrderButton *)sender;
+    OrderButton *orderButton = (OrderButton *)sender;
 //    if([[self.view subviews] count]>1){
 //        [[[orderButton.vc.view subviews]objectAtIndex:1] removeFromSuperview];
 //        NSLog(@"%d:%@", orderButton.vc.view.subviews.count, [orderButton.vc.view subviews]);
@@ -61,14 +64,20 @@
     orderVC.channelNames = orderButton.channelNames;
     orderVC.channelUrls = orderButton.channelUrls;
     UIView *orderView = [orderVC view];
-    [orderView setFrame:CGRectMake(0, - orderButton.vc.view.bounds.size.height, orderButton.vc.view.bounds.size.width, orderButton.vc.view.bounds.size.height)];
+    
+    CGFloat width = orderButton.vc.view.bounds.size.width;//本例中orderButton.vc等于self
+    CGFloat height = orderButton.vc.view.bounds.size.height;
+    CGRect rect_hidden = CGRectMake(0, - height, width, height);
+    CGRect rect_show = CGRectMake(0, 64, width, height);
+    
+    [orderView setFrame:rect_hidden];
     [orderView setBackgroundColor:[UIColor colorWithRed:239/255.0 green:239/255.0 blue:239/255.0 alpha:1.0]];
-    [orderVC.backButton addTarget:self action:@selector(backAction) forControlEvents:UIControlEventTouchUpInside];
+    [orderVC.backButton addTarget:self action:@selector(hidden_orderView) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:orderView];
     [self addChildViewController:orderVC];
     [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
-        [orderView setFrame:CGRectMake(0, 64, orderButton.vc.view.bounds.size.width, orderButton.vc.view.bounds.size.height)];
+        [orderView setFrame:rect_show];
         
     } completion:^(BOOL finished){
         
@@ -77,10 +86,14 @@
 }
 
 
-- (void)backAction{
+- (void)hidden_orderView{
+    CGFloat width = self.view.bounds.size.width;//本例中orderButton.vc等于self
+    CGFloat height = self.view.bounds.size.height;
+    CGRect rect_hidden = CGRectMake(0, - height, width, height);
+    
     OrderViewController * orderVC = [self.childViewControllers objectAtIndex:orderVCIndex];
     [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
-        [orderVC.view setFrame:CGRectMake(0, - self.view.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height)];
+        [orderVC.view setFrame:rect_hidden];
         
     } completion:^(BOOL finished){
         NSString *libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
