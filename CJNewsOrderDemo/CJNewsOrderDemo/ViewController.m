@@ -57,7 +57,7 @@
 
 
 #pragma mark - 类似网易新闻的订阅功能
-- (IBAction)orderViewOut:(id)sender{
+- (IBAction)show_orderView:(id)sender{
     
     OrderButton *orderButton = (OrderButton *)sender;
 //    if([[self.view subviews] count]>1){
@@ -95,17 +95,24 @@
 
 
 - (void)hidden_orderView{
-    CGFloat width = self.view.bounds.size.width;//本例中orderButton.vc等于self
-    CGFloat height = self.view.bounds.size.height;
-    CGRect rect_hidden = CGRectMake(0, - height, width, height);
-    
     OrderViewController *orderVC = [self.childViewControllers objectAtIndex:orderVCIndex];
+    if (orderVC->_viewArr1.count < 3) {
+        [[[UIAlertView alloc]initWithTitle:NSLocalizedString(@"提示", nil)
+                                   message:NSLocalizedString(@"请至少选择三个", nil)
+                                  delegate:nil
+                         cancelButtonTitle:NSLocalizedString(@"确定", nil)
+                         otherButtonTitles:nil] show];
+        return;
+    }
+    
+    
     [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
+        CGFloat width = self.view.bounds.size.width;//本例中orderButton.vc等于self
+        CGFloat height = self.view.bounds.size.height;
+        CGRect rect_hidden = CGRectMake(0, - height, width, height);
         [orderVC.view setFrame:rect_hidden];
         
     } completion:^(BOOL finished){
-        
-        
         NSMutableArray *array_order_YES = [NSMutableArray array];
         NSMutableArray *array_order_NO = [NSMutableArray array];
         
