@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CJNewsOrder"
-  s.version      = "1.0.2"
+  s.version      = "1.0.21"
   s.summary      = "网易新闻订阅功能的结构"
   s.homepage     = "https://github.com/dvlproad/CJNewsOrder"
   s.license      = "MIT"
