@@ -32,12 +32,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8i-0R-F39">
-                                <rect key="frame" x="246" y="64" width="74" height="27"/>
-                                <state key="normal" image="topnav_orderbutton.png"/>
-                                <state key="highlighted" image="topnav_orderbutton_selected_unselected.png"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kUH-v2-CCg">
+                                <rect key="frame" x="10" y="211" width="300" height="30"/>
+                                <state key="normal" title="push新闻订阅">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
-                                    <action selector="show_orderView:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uqk-9r-fdV"/>
+                                    <action selector="pushNewsOrderVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qt7-R8-0wu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qBX-Fb-Lxo">
+                                <rect key="frame" x="10" y="269" width="300" height="30"/>
+                                <state key="normal" title="Popup新闻订阅">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goPopupNewsOrderVC:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="P2V-WC-M3q"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -50,10 +60,6 @@
             <point key="canvasLocation" x="-350" y="221"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="topnav_orderbutton.png" width="126" height="90"/>
-        <image name="topnav_orderbutton_selected_unselected.png" width="126" height="90"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

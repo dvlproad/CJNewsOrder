@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "PopupNewsOrderVC.h"
 
 #define KDefaultCountOfUpsideList 10    //默认订阅频道数
 
@@ -30,33 +30,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.title = NSLocalizedString(@"网易新闻", nil);
+    self.title = NSLocalizedString(@"首页", nil);
 }
 
 
-#pragma mark - 类似网易新闻的订阅功能
-- (IBAction)show_orderView:(id)sender{
+- (IBAction)goPopupNewsOrderVC:(id)sender{
+    PopupNewsOrderVC *vc = [[PopupNewsOrderVC alloc]initWithNibName:@"PopupNewsOrderVC" bundle:nil];
+    vc.title = [sender titleForState:UIControlStateNormal];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+//
+- (IBAction)pushNewsOrderVC:(id)sender{
     ChannelOrderVC *orderVC = [[ChannelOrderVC alloc] init];
     orderVC.dataSource = self;
     orderVC.delegate = self;
-    
-    CGFloat width = self.view.bounds.size.width;
-    CGFloat height = self.view.bounds.size.height - 64;
-    CGRect rect_hidden = CGRectMake(0, - height, width, height);
-    CGRect rect_show = CGRectMake(0, 64, width, height);
-    
-    [orderVC.view setFrame:rect_hidden];
-    
-    [self.view addSubview:orderVC.view];
-    [self addChildViewController:orderVC];
-    [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionLayoutSubviews animations:^{
-        [orderVC.view setFrame:rect_show];
-        
-    } completion:^(BOOL finished){
-        
-    }];
-    
+    orderVC.title = @"新闻订阅";
+    [self.navigationController pushViewController:orderVC animated:YES];
 }
+
+
 
 #pragma mark 数据源:ChannelOrderVCDataSource
 - (NSMutableArray *)originChannelOrderYES_whenChannelFileNoExist{

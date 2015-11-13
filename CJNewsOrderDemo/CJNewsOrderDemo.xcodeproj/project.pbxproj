@@ -24,6 +24,8 @@
 		8051D1F51BEA08E700D3B19F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8051D1F41BEA08E700D3B19F /* Images.xcassets */; };
 		8051D1F81BEA08E700D3B19F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8051D1F61BEA08E700D3B19F /* LaunchScreen.xib */; };
 		8051D2041BEA08E800D3B19F /* CJNewsOrderDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8051D2031BEA08E800D3B19F /* CJNewsOrderDemoTests.m */; };
+		807C3BDF1BF5C5FA0062E117 /* PopupNewsOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 807C3BDD1BF5C5FA0062E117 /* PopupNewsOrderVC.m */; };
+		807C3BE01BF5C5FA0062E117 /* PopupNewsOrderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 807C3BDE1BF5C5FA0062E117 /* PopupNewsOrderVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,9 @@
 		8051D1FD1BEA08E800D3B19F /* CJNewsOrderDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CJNewsOrderDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8051D2021BEA08E800D3B19F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8051D2031BEA08E800D3B19F /* CJNewsOrderDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJNewsOrderDemoTests.m; sourceTree = "<group>"; };
+		807C3BDC1BF5C5FA0062E117 /* PopupNewsOrderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopupNewsOrderVC.h; sourceTree = "<group>"; };
+		807C3BDD1BF5C5FA0062E117 /* PopupNewsOrderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopupNewsOrderVC.m; sourceTree = "<group>"; };
+		807C3BDE1BF5C5FA0062E117 /* PopupNewsOrderVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PopupNewsOrderVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +144,7 @@
 				8051D1EC1BEA08E700D3B19F /* AppDelegate.m */,
 				8051D1EE1BEA08E700D3B19F /* ViewController.h */,
 				8051D1EF1BEA08E700D3B19F /* ViewController.m */,
+				807C3BDB1BF5C5980062E117 /* Controller */,
 				8051D1F11BEA08E700D3B19F /* Main.storyboard */,
 				78E1AEE11BF0F9320059673A /* CJNewsOrder */,
 				8051D1F41BEA08E700D3B19F /* Images.xcassets */,
@@ -172,6 +178,16 @@
 				8051D2021BEA08E800D3B19F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		807C3BDB1BF5C5980062E117 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				807C3BDC1BF5C5FA0062E117 /* PopupNewsOrderVC.h */,
+				807C3BDD1BF5C5FA0062E117 /* PopupNewsOrderVC.m */,
+				807C3BDE1BF5C5FA0062E117 /* PopupNewsOrderVC.xib */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +279,7 @@
 				78E1AEF41BF0F9320059673A /* order_drag_move_bg.png in Resources */,
 				8051D1F81BEA08E700D3B19F /* LaunchScreen.xib in Resources */,
 				8051D1F51BEA08E700D3B19F /* Images.xcassets in Resources */,
+				807C3BE01BF5C5FA0062E117 /* PopupNewsOrderVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +300,7 @@
 				78E1AEF91BF0F9320059673A /* ChannelView.m in Sources */,
 				78E1AF031BF12DB00059673A /* ChannelFile.m in Sources */,
 				78E1AEF81BF0F9320059673A /* ChannelOrderVC.m in Sources */,
+				807C3BDF1BF5C5FA0062E117 /* PopupNewsOrderVC.m in Sources */,
 				8051D1F01BEA08E700D3B19F /* ViewController.m in Sources */,
 				8051D1ED1BEA08E700D3B19F /* AppDelegate.m in Sources */,
 				8051D1EA1BEA08E700D3B19F /* main.m in Sources */,

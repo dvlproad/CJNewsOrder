@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "ChannelOrderVC.h"
-#import "ChannelFile.h"
 
 @interface ViewController : UIViewController<ChannelOrderVCDataSource, ChannelOrderVCDelegate>
 
