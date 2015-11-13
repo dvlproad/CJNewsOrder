@@ -7,17 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		78E1AEF11BF0F9320059673A /* order_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E1AEE31BF0F9320059673A /* order_back.png */; settings = {ASSET_TAGS = (); }; };
-		78E1AEF21BF0F9320059673A /* order_back_select.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E1AEE41BF0F9320059673A /* order_back_select.png */; settings = {ASSET_TAGS = (); }; };
-		78E1AEF31BF0F9320059673A /* order_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E1AEE51BF0F9320059673A /* order_background.png */; settings = {ASSET_TAGS = (); }; };
-		78E1AEF41BF0F9320059673A /* order_drag_move_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E1AEE61BF0F9320059673A /* order_drag_move_bg.png */; settings = {ASSET_TAGS = (); }; };
-		78E1AEF51BF0F9320059673A /* topnav_orderbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E1AEE71BF0F9320059673A /* topnav_orderbutton.png */; settings = {ASSET_TAGS = (); }; };
-		78E1AEF61BF0F9320059673A /* topnav_orderbutton_selected_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E1AEE81BF0F9320059673A /* topnav_orderbutton_selected_unselected.png */; settings = {ASSET_TAGS = (); }; };
-		78E1AEF71BF0F9320059673A /* OrderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1AEEA1BF0F9320059673A /* OrderButton.m */; settings = {ASSET_TAGS = (); }; };
-		78E1AEF81BF0F9320059673A /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1AEEC1BF0F9320059673A /* OrderViewController.m */; settings = {ASSET_TAGS = (); }; };
-		78E1AEF91BF0F9320059673A /* TouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1AEEE1BF0F9320059673A /* TouchView.m */; settings = {ASSET_TAGS = (); }; };
-		78E1AEFA1BF0F9320059673A /* TouchViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1AEF01BF0F9320059673A /* TouchViewModel.m */; settings = {ASSET_TAGS = (); }; };
-		78E1AF031BF12DB00059673A /* ChannelFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1AF021BF12DB00059673A /* ChannelFile.m */; settings = {ASSET_TAGS = (); }; };
+		78E1AEF11BF0F9320059673A /* order_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E1AEE31BF0F9320059673A /* order_back.png */; };
+		78E1AEF21BF0F9320059673A /* order_back_select.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E1AEE41BF0F9320059673A /* order_back_select.png */; };
+		78E1AEF31BF0F9320059673A /* order_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E1AEE51BF0F9320059673A /* order_background.png */; };
+		78E1AEF41BF0F9320059673A /* order_drag_move_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E1AEE61BF0F9320059673A /* order_drag_move_bg.png */; };
+		78E1AEF51BF0F9320059673A /* topnav_orderbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E1AEE71BF0F9320059673A /* topnav_orderbutton.png */; };
+		78E1AEF61BF0F9320059673A /* topnav_orderbutton_selected_unselected.png in Resources */ = {isa = PBXBuildFile; fileRef = 78E1AEE81BF0F9320059673A /* topnav_orderbutton_selected_unselected.png */; };
+		78E1AEF81BF0F9320059673A /* ChannelOrderVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1AEEC1BF0F9320059673A /* ChannelOrderVC.m */; };
+		78E1AEF91BF0F9320059673A /* ChannelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1AEEE1BF0F9320059673A /* ChannelView.m */; };
+		78E1AEFA1BF0F9320059673A /* ChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1AEF01BF0F9320059673A /* ChannelModel.m */; };
+		78E1AF031BF12DB00059673A /* ChannelFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E1AF021BF12DB00059673A /* ChannelFile.m */; };
 		8051D1EA1BEA08E700D3B19F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8051D1E91BEA08E700D3B19F /* main.m */; };
 		8051D1ED1BEA08E700D3B19F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8051D1EC1BEA08E700D3B19F /* AppDelegate.m */; };
 		8051D1F01BEA08E700D3B19F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8051D1EF1BEA08E700D3B19F /* ViewController.m */; };
@@ -44,14 +43,12 @@
 		78E1AEE61BF0F9320059673A /* order_drag_move_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = order_drag_move_bg.png; sourceTree = "<group>"; };
 		78E1AEE71BF0F9320059673A /* topnav_orderbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topnav_orderbutton.png; sourceTree = "<group>"; };
 		78E1AEE81BF0F9320059673A /* topnav_orderbutton_selected_unselected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topnav_orderbutton_selected_unselected.png; sourceTree = "<group>"; };
-		78E1AEE91BF0F9320059673A /* OrderButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderButton.h; sourceTree = "<group>"; };
-		78E1AEEA1BF0F9320059673A /* OrderButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderButton.m; sourceTree = "<group>"; };
-		78E1AEEB1BF0F9320059673A /* OrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
-		78E1AEEC1BF0F9320059673A /* OrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
-		78E1AEED1BF0F9320059673A /* TouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchView.h; sourceTree = "<group>"; };
-		78E1AEEE1BF0F9320059673A /* TouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchView.m; sourceTree = "<group>"; };
-		78E1AEEF1BF0F9320059673A /* TouchViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchViewModel.h; sourceTree = "<group>"; };
-		78E1AEF01BF0F9320059673A /* TouchViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchViewModel.m; sourceTree = "<group>"; };
+		78E1AEEB1BF0F9320059673A /* ChannelOrderVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelOrderVC.h; sourceTree = "<group>"; };
+		78E1AEEC1BF0F9320059673A /* ChannelOrderVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelOrderVC.m; sourceTree = "<group>"; };
+		78E1AEED1BF0F9320059673A /* ChannelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelView.h; sourceTree = "<group>"; };
+		78E1AEEE1BF0F9320059673A /* ChannelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelView.m; sourceTree = "<group>"; };
+		78E1AEEF1BF0F9320059673A /* ChannelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelModel.h; sourceTree = "<group>"; };
+		78E1AEF01BF0F9320059673A /* ChannelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelModel.m; sourceTree = "<group>"; };
 		78E1AF011BF12DB00059673A /* ChannelFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelFile.h; sourceTree = "<group>"; };
 		78E1AF021BF12DB00059673A /* ChannelFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelFile.m; sourceTree = "<group>"; };
 		8051D1E41BEA08E700D3B19F /* CJNewsOrderDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CJNewsOrderDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,14 +90,12 @@
 				78E1AEE21BF0F9320059673A /* images_CJNewsOrder */,
 				78E1AF011BF12DB00059673A /* ChannelFile.h */,
 				78E1AF021BF12DB00059673A /* ChannelFile.m */,
-				78E1AEE91BF0F9320059673A /* OrderButton.h */,
-				78E1AEEA1BF0F9320059673A /* OrderButton.m */,
-				78E1AEEB1BF0F9320059673A /* OrderViewController.h */,
-				78E1AEEC1BF0F9320059673A /* OrderViewController.m */,
-				78E1AEED1BF0F9320059673A /* TouchView.h */,
-				78E1AEEE1BF0F9320059673A /* TouchView.m */,
-				78E1AEEF1BF0F9320059673A /* TouchViewModel.h */,
-				78E1AEF01BF0F9320059673A /* TouchViewModel.m */,
+				78E1AEEB1BF0F9320059673A /* ChannelOrderVC.h */,
+				78E1AEEC1BF0F9320059673A /* ChannelOrderVC.m */,
+				78E1AEED1BF0F9320059673A /* ChannelView.h */,
+				78E1AEEE1BF0F9320059673A /* ChannelView.m */,
+				78E1AEEF1BF0F9320059673A /* ChannelModel.h */,
+				78E1AEF01BF0F9320059673A /* ChannelModel.m */,
 			);
 			name = CJNewsOrder;
 			path = ../../CJNewsOrder;
@@ -144,8 +139,6 @@
 				8051D1EC1BEA08E700D3B19F /* AppDelegate.m */,
 				8051D1EE1BEA08E700D3B19F /* ViewController.h */,
 				8051D1EF1BEA08E700D3B19F /* ViewController.m */,
-				8051D2281BEB30FB00D3B19F /* Controller */,
-				8051D2291BEB30FB00D3B19F /* res_image */,
 				8051D1F11BEA08E700D3B19F /* Main.storyboard */,
 				78E1AEE11BF0F9320059673A /* CJNewsOrder */,
 				8051D1F41BEA08E700D3B19F /* Images.xcassets */,
@@ -179,20 +172,6 @@
 				8051D2021BEA08E800D3B19F /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		8051D2281BEB30FB00D3B19F /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		8051D2291BEB30FB00D3B19F /* res_image */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = res_image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,14 +280,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78E1AEF91BF0F9320059673A /* TouchView.m in Sources */,
+				78E1AEF91BF0F9320059673A /* ChannelView.m in Sources */,
 				78E1AF031BF12DB00059673A /* ChannelFile.m in Sources */,
-				78E1AEF71BF0F9320059673A /* OrderButton.m in Sources */,
-				78E1AEF81BF0F9320059673A /* OrderViewController.m in Sources */,
+				78E1AEF81BF0F9320059673A /* ChannelOrderVC.m in Sources */,
 				8051D1F01BEA08E700D3B19F /* ViewController.m in Sources */,
 				8051D1ED1BEA08E700D3B19F /* AppDelegate.m in Sources */,
 				8051D1EA1BEA08E700D3B19F /* main.m in Sources */,
-				78E1AEFA1BF0F9320059673A /* TouchViewModel.m in Sources */,
+				78E1AEFA1BF0F9320059673A /* ChannelModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

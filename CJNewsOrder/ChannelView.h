@@ -1,5 +1,5 @@
 //
-//  TouchView.h
+//  ChannelView.h
 //  CJNewsOrderDemo
 //
 //  Created by lichq on 15/11/4.
@@ -16,8 +16,8 @@
 //按钮的大小
 
 
-@class TouchViewModel;
-@interface TouchView : UIImageView
+@class ChannelModel;
+@interface ChannelView : UIImageView
 {
     CGPoint _point;
     CGPoint _point2;
@@ -30,5 +30,5 @@
 }
 @property (nonatomic,retain) UILabel *label;
 @property (nonatomic,retain) UILabel *moreChannelsLabel;
-@property (nonatomic,retain) TouchViewModel * touchViewModel;
+@property (nonatomic,retain) ChannelModel *channelModel;
 @end

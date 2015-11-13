@@ -24,15 +24,15 @@
 + (NSArray *)getChannels_Order_YES{
     NSString *libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *filePath_order_YES = [libraryPath stringByAppendingPathComponent:kPath_Order_YES];
-    NSArray *array_order_YES = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath_order_YES];
-    return array_order_YES;
+    NSArray *channel_order_YES = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath_order_YES];
+    return channel_order_YES;
 }
 
 + (NSArray *)getChannels_Order_NO{
     NSString *libraryPath = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *filePath_order_NO = [libraryPath stringByAppendingPathComponent:kPath_Order_NO];
-    NSArray *array_order_NO = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath_order_NO];
-    return array_order_NO;
+    NSArray *channel_order_NO = [NSKeyedUnarchiver unarchiveObjectWithFile:filePath_order_NO];
+    return channel_order_NO;
 }
 
 

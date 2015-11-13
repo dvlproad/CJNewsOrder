@@ -1,14 +1,14 @@
 //
-//  TouchView.m
+//  ChannelView.m
 //  CJNewsOrderDemo
 //
 //  Created by lichq on 15/11/4.
 //  Copyright (c) 2015年 lichq. All rights reserved.
 //
 
-#import "TouchView.h"
+#import "ChannelView.h"
 
-@implementation TouchView
+@implementation ChannelView
 
 - (id)initWithFrame:(CGRect)frame
 {
