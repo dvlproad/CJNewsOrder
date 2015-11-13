@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ChannelFile.h"
 
 @class ChannelOrderVC;
 @protocol ChannelOrderVCDelegate <NSObject>

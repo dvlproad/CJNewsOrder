@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios, "7.0"
 
-  s.source       = { :git => "https://github.com/dvlproad/CJNewsOrder.git", :tag => "1.0.2" }
+  s.source       = { :git => "https://github.com/dvlproad/CJNewsOrder.git", :tag => "1.0.21" }
   s.source_files  = "CJNewsOrder/**/*.{h,m}"
   s.resources = "CJNewsOrder/**/*.{png}"
   s.frameworks = 'UIKit'

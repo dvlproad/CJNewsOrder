@@ -7,10 +7,7 @@
 //
 
 #import "ChannelOrderVC.h"
-#import "ChannelFile.h"
-#import "ChannelModel.h"
 #import "ChannelView.h"
-
 
 @interface ChannelOrderVC ()
 
@@ -44,26 +41,44 @@
 }
 
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    
-    [self.view setBackgroundColor:[UIColor colorWithRed:239/255.0 green:239/255.0 blue:239/255.0 alpha:1.0]];
-    
-    
-//    [self initizalData_CJNewsOrder];
+//初始化化数据
+- (void)initizalData_CJNewsOrder{
     if (![ChannelFile isExist]) {
-        NSAssert(self.dataSource == nil, @"Error: 未设置ChannelOrderVC的dataSource，请检查");
+        NSAssert(self.dataSource != nil, @"Error: 未设置ChannelOrderVC的dataSource，请检查");
         NSMutableArray *channel_order_YES_Ori =
-                [self.dataSource originChannelOrderYES_whenChannelFileNoExist];
+        [self.dataSource originChannelOrderYES_whenChannelFileNoExist];
         NSMutableArray *channel_order_NO_Ori =
-                [self.dataSource originChannelOrderNO_whenChannelFileNoExist];
+        [self.dataSource originChannelOrderNO_whenChannelFileNoExist];
         [ChannelFile saveChannels_Order_YES:channel_order_YES_Ori];
         [ChannelFile saveChannels_Order_NO:channel_order_NO_Ori];
     }
     self.channel_order_YES = [NSMutableArray arrayWithArray:[ChannelFile getChannels_Order_YES]];
     self.channel_order_NO = [NSMutableArray arrayWithArray:[ChannelFile getChannels_Order_NO]];
+}
+
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    //注意：backButton与self.view的frame有关所以不能写在viewDidLoad中设置self.backButton的frame
+    CGRect rect_backButton = CGRectMake(self.view.bounds.size.width - 56, self.view.bounds.size.height - 44, 56, 44);
+    self.backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [self.backButton setFrame:rect_backButton];
+    [self.backButton setImage:[UIImage imageNamed:@"order_back.png"] forState:UIControlStateNormal];
+    [self.backButton setImage:[UIImage imageNamed:@"order_back_select.png"] forState:UIControlStateNormal];
+    [self.backButton addTarget:self action:@selector(hiddenOrderViewController) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.backButton];
+}
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor colorWithRed:239/255.0 green:239/255.0 blue:239/255.0 alpha:1.0];
+    
+    [self initizalData_CJNewsOrder];    //初始化化数据
+    
     
     
     _viewArr1 = [[NSMutableArray alloc] init];
@@ -144,14 +159,6 @@
         
         [self.view addSubview:channelView];
     }
-    
-
-    self.backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.backButton setFrame:CGRectMake(self.view.bounds.size.width - 56, self.view.bounds.size.height - 44 - 64, 56, 44)];
-    [self.backButton setImage:[UIImage imageNamed:@"order_back.png"] forState:UIControlStateNormal];
-    [self.backButton setImage:[UIImage imageNamed:@"order_back_select.png"] forState:UIControlStateNormal];
-    [self.backButton addTarget:self action:@selector(hiddenOrderViewController) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:self.backButton];
 }
 
 
